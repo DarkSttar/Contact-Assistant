@@ -78,9 +78,9 @@ class Bot():
                          print(self.book.add_birthday(record,exitinig_record,'-'.join(edit_command[2:][::-1])))
                     elif len(edit_command) == 2 and edit_command[0] == 'remove' and edit_command[1] == 'birthday':
                         print(self.book.remove_birthday(record,exitinig_record))
-                    elif len(edit_command) == 2 and edit_command[0] == 'edit' and edit_command[1] == 'email':
+                    elif len(edit_command) == 2 and edit_command[0] == 'add' and edit_command[1] == 'email':
                         print(self.book.add_email(record,exitinig_record,input(command_message('Enter email: '))))
-                    elif len(edit_command) > 2 and edit_command[0] == 'edit' and edit_command[1] == 'email':
+                    elif len(edit_command) > 2 and edit_command[0] == 'add' and edit_command[1] == 'email':
                         print(self.book.add_email(record,exitinig_record,edit_command[2]))
                     elif len(edit_command) == 2 and edit_command[0] == 'remove' and edit_command[1] == 'email':
                         print(self.book.remove_email(record,exitinig_record))
