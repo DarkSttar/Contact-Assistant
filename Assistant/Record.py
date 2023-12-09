@@ -21,7 +21,7 @@ class ID(Field):
      #SETTER
      @get_id.setter
      def set_id(self,value):
-          #INCAPSULATION
+          
          
           if type(value) is int:
                self._id = value
