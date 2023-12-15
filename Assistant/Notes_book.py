@@ -28,7 +28,7 @@ class NotesBook(UserList):
         [Notes_record.tag.append(Tag(item)) for item in dict['Tags']]
         return Notes_record
     
-    def save_contacts(self):
+    def save(self):
          with open(self.json_file_name,'w') as fh:
             json.dump(self.exiting_data,fh,indent=1)
 
@@ -49,7 +49,7 @@ NoteBook.append(Test5)
 for item in NoteBook.data:
     NoteBook.serialize_to_json(item)
 
-NoteBook.save_contacts()
+NoteBook.save()
 
 
 
