@@ -21,7 +21,7 @@ class ID(Field):
      #SETTER
      @get_id.setter
      def set_id(self,value):
-          #INCAPSULATION
+          
          
           if type(value) is int:
                self._id = value
@@ -74,6 +74,8 @@ class Phone(Field):
      def set_phone(self,phone : str):
           if phone.isdigit() and len(phone) == 10:
                self._phone = phone
+#        elif phone == None:
+#              self._phone = None
           else:
                raise ValueError('ValueError: Phone Number have 10 numbers ex: 0501952343')
      def __str__(self):
