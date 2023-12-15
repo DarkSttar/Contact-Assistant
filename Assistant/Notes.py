@@ -105,7 +105,7 @@ class AdditionDate(Field):
 
 
 class NotesRecord():
-    def __init__(self,title=None,note: Note =None,tag = None):
+    def __init__(self,id,title=None,note: Note =None,tag = None):
         self.id = ID(1)
         self.title = Title(title)
         self.note = Note(note)
@@ -117,7 +117,7 @@ class NotesRecord():
     def __str__(self):
         return f'ID: {str(self.id)}\nTitle: {self.title}\nNote: {self.note}\nTags: {" ".join([str(item) for item in self.tag])} \nDate addition: {str(self.date_add)} '    
 
-x = NotesRecord(title='TEST TITLE',note='TEST NOTE',tag = 'TESTTAG')
+x = NotesRecord(1, title='TEST TITLE',note='TEST NOTE',tag = 'TESTTAG')
 print(x)
 
 
