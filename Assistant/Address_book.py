@@ -4,6 +4,7 @@ from datetime import datetime , date
 from Style import positive_action,command_message, book_style,error_message
 from decorators import input_error
 import json
+import os
 
 class AddressBook(UserList):
     def __init__(self):
@@ -223,15 +224,18 @@ class AddressBook(UserList):
 
     
     def load_contacts(self):
-         with open(self.json_file_name,'r') as fh:
-            try:
-                self.exiting_data = json.load(fh)
-            except json.JSONDecodeError:
-                print(json.JSONDecodeError)
-                return
-            for item in self.exiting_data:
-                 self.data.append(self.deserialize(item))
-    
+        if os.path.exists(self.json_file_name):
+            
+            with open(self.json_file_name,'r') as fh:
+                try:
+                    self.exiting_data = json.load(fh)
+                except json.JSONDecodeError:
+                    print(json.JSONDecodeError)
+                    return
+                for item in self.exiting_data:
+                    self.data.append(self.deserialize(item))
+        else:
+            print(f'{self.json_file_name} Not Found!')
     
     def save_contacts(self):
          with open(self.json_file_name,'w') as fh:

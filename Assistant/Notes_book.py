@@ -1,7 +1,7 @@
 from collections import UserList
 from decorators import input_error
 from Notes import NotesRecord,Tag
-from datetime import datetime
+
 import json
 
 class NotesBook(UserList):

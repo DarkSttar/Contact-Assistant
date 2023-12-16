@@ -1,6 +1,6 @@
 from Bot import Bot
 from Style import command_message
-    
+
 if __name__ == '__main__':
     print(command_message("Hello! I'm ContactAssistant"))
     print(command_message('Type help for help'))
